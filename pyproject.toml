@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yaplayground"
+version = "0.0.1"
+authors = [
+    { name = "Aaron" },
+]
+requires-python = ">=3.7"
+classifiers = [
+    # classifier list is on https://pypi.org/classifiers/
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+# dependencies is a list of PEP 508 strings
+dependencies = [
+#    "sqlalchemy ~= 1.4.0",
+]
+
+description = ""
+
+# optional dependencies is a table of lists of PEP 508 strings
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "pytest",
+]
+
+[project.scripts]   # console_scripts
+yaplayground = "yaplayground.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# References:
+# PEP 621 - Storing project metadata in pyproject.toml <https://peps.python.org/pep-0621/>
+# PEP 508 - Dependency specification for Python Software Packages <https://peps.python.org/pep-0508/>
+# setuptools - Configuring setuptools using pyproject.toml files
+# <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html>
