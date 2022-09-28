@@ -5,9 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "yaplayground"
 version = "0.0.1"
+description = "description in pyproject"
+readme = "README.md"
 authors = [
     { name = "Aaron" },
 ]
+license = { file = "LICENSE" }
 requires-python = ">=3.7"
 classifiers = [
     # classifier list is on https://pypi.org/classifiers/
@@ -22,14 +25,17 @@ dependencies = [
 #    "sqlalchemy ~= 1.4.0",
 ]
 
-description = ""
-
 # optional dependencies is a table of lists of PEP 508 strings
 [project.optional-dependencies]
 dev = [
     "mypy",
     "pytest",
 ]
+
+[project.urls]
+homepage = "https://github.com/tsangwpx/yaplayground"
+documentation = "https://github.com/tsangwpx/yaplayground"
+repository = "https://github.com/tsangwpx/yaplayground"
 
 [project.scripts]   # console_scripts
 yaplayground = "yaplayground.__main__:main"
