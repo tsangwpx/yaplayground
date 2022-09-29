@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yaplayground"
-version = "0.1.0"
+version = "1.0.0"
 description = "description in pyproject"
 readme = "README.md"
 authors = [
     { name = "Aaron" },
 ]
-license = { file = "LICENSE" }
+license = { text = "MIT" }
 requires-python = ">=3.7"
 classifiers = [
     # classifier list is on https://pypi.org/classifiers/
