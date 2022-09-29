@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yaplayground"
-version = "0.0.2"
+version = "0.1.0"
 description = "description in pyproject"
 readme = "README.md"
 authors = [
@@ -33,9 +33,9 @@ dev = [
 ]
 
 [project.urls]
-homepage = "https://github.com/tsangwpx/yaplayground"
-documentation = "https://github.com/tsangwpx/yaplayground"
-repository = "https://github.com/tsangwpx/yaplayground"
+Homepage = "https://github.com/tsangwpx/yaplayground"
+Documentation = "https://github.com/tsangwpx/yaplayground"
+Source = "https://github.com/tsangwpx/yaplayground"
 
 [project.scripts]   # console_scripts
 yaplayground = "yaplayground.__main__:main"
