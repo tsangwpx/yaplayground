@@ -1,0 +1,26 @@
+---
+name: "Test"
+
+on:
+  push:
+    paths:
+      - .github/workflows/test.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        fruit:
+          - apple
+          - banana
+          - cherry
+        include:
+          - { image: "debian:bookworm" }
+          - { fruit: "banana", image: "debian:bullseye" }
+    steps:
+      - run: echo "${{ matrix.fruit }}"
+    services:
+      debian:
+        image: ${{ matrix.image }}
