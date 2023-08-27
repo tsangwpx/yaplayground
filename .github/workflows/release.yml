@@ -1,0 +1,26 @@
+---
+on:
+  push:
+    tags:
+      - "*"
+    paths:
+      - .github/workflows/release.yml
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - run: |
+          echo "Hello World" > data
+
+      - run: |
+          gh release create \
+            --draft \
+            --verify-tag \
+            "${{ github.ref_name }}" \
+            data
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}

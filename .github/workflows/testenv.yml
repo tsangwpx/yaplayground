@@ -1,6 +1,4 @@
 ---
-name: "Test"
-
 on:
   push:
     paths:
