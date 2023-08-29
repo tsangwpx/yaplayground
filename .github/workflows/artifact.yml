@@ -1,0 +1,34 @@
+---
+on:
+  push:
+    paths:
+      - .github/workflows/artifact.yml
+
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          mkdir -p folder
+          echo "Hello World" > folder/world
+          echo "Hello Data" > folder/data
+          pwd
+          ls -alR .
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: data
+          path: folder
+
+  two:
+    runs-on: ubuntu-latest
+    needs: [one]
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: data
+          path: folder
+
+      - run: |
+          pwd
+          ls -alR .
